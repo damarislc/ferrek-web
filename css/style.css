@@ -8,6 +8,9 @@ body {
   font-family: "Niramit", sans-serif;
   font-weight: 400;
   font-style: normal;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 }
 
 header {
@@ -15,20 +18,16 @@ header {
   background-color: #d6dce5;
   box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
     0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
-  position: sticky;
-  top: 0;
+}
+
+img {
+  vertical-align: baseline;
 }
 
 main {
   padding: 15px;
   margin-bottom: 50px;
-}
-
-nav {
-  display: inline-block;
-  position: absolute;
-  margin: 30px;
-  right: 0;
+  flex: 1;
 }
 
 nav a {
@@ -46,27 +45,34 @@ footer {
   box-shadow: 0px -2px 4px -1px rgba(0, 0, 0, 0.2),
     0px -4px 5px 0px rgba(0, 0, 0, 0.14), 0px -1px 10px 0px rgba(0, 0, 0, 0.12);
   height: 50px;
-  text-align: center;
-  padding: 10px;
-  position: fixed;
-  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
+  margin-bottom: auto;
 }
 
 footer p {
-  display: inline-block;
   font-weight: 700;
   font-size: 18px;
   margin-right: 20px;
+  margin-bottom: 0;
 }
 
-.facebook {
+footer img {
+  vertical-align: baseline;
+}
+
+.facebook,
+.div-facebook {
   width: 20px;
   height: 20px;
 }
-.active {
+
+nav .active {
   border-bottom: 2px solid red;
 }
+
 .logo {
   margin-right: 8px;
   width: 231px;
@@ -75,7 +81,7 @@ footer p {
 
 .menu-item {
   display: inline-block;
-  margin: 5px;
+  margin: 1em;
   font-weight: 700;
 }
 
@@ -87,17 +93,24 @@ footer p {
 .header-main h1 {
   font-size: 2em;
 }
+
 .promotions {
   margin-left: 20px;
 }
+
 .promotions img {
   width: 500px;
-  margin: 15px;
+}
+
+.quote {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .quote img {
-  display: block;
-  margin: 15px 0 15px 500px;
+  margin-bottom: 1rem;
 }
 
 .quote button,
@@ -112,8 +125,30 @@ footer p {
   font-size: large;
 }
 
-.quote button {
-  margin: 15px 0 15px 730px;
+header .container-fluid {
+  width: auto;
+  margin-left: unset;
+}
+
+.navbar {
+  flex-wrap: nowrap;
+}
+
+.navbar-toggler {
+  margin-left: auto;
+}
+
+#navbarSupportedContent {
+  flex-grow: initial;
+  flex-basis: auto;
+}
+
+.carousel-control-prev-icon {
+  background-image: url("../images//prevIcon.svg");
+}
+
+.carousel-control-next-icon {
+  background-image: url("../images/nextIcon.svg");
 }
 
 /*** About ***/
@@ -122,24 +157,23 @@ footer p {
 }
 
 /*** Products ***/
-.details {
-  margin: 15px 0 0 50px;
+.btn:hover {
+  background-color: #d6dce5;
 }
 
 .products {
-  margin-left: 150px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
 }
+
 .products img {
-  width: 200px;
+  height: 300px;
 }
 
-.product {
-  display: inline-block;
-  margin: 15px 50px;
-}
-
-.product p {
-  text-align: center;
+.products .card {
+  margin: 1rem;
 }
 
 /*** Brands ***/
@@ -156,7 +190,103 @@ footer p {
 }
 
 /*** Contact ***/
-.contact,
+#contact-main .container {
+  display: grid;
+  width: fit-content;
+  grid-auto-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 0.5fr 1.5fr;
+  gap: 5px 10px;
+  grid-template-areas:
+    "schedule contact-info"
+    "address address";
+}
+
+.schedule {
+  grid-area: schedule;
+  border: solid black 2px;
+  display: flex;
+  flex-direction: column;
+  /* height: 250px; */
+  justify-content: center;
+  padding-left: 15px;
+}
+
+.schedule-title p::before {
+  content: url("../images//icons/clock.svg");
+  margin-right: 5px;
+}
+
+.schedule-hours {
+  margin-top: 20px;
+  margin-left: 18px;
+}
+.contact-info {
+  grid-area: contact-info;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact {
+  border: solid black 2px;
+  margin: 5px;
+  padding: 15px;
+}
+
+.contact p {
+  margin-bottom: 0;
+}
+
+.whatsapp p::before {
+  content: url("../images//icons/whatsapp.svg");
+  margin-right: 5px;
+}
+
+.phone p::before {
+  content: url("../images//icons/telephone-fill.svg");
+  margin-right: 5px;
+}
+
+.email p::before {
+  content: url("../images//icons/envelope-at-fill.svg");
+  margin-right: 5px;
+}
+
+.web p::before {
+  content: url("../images//icons/browser-chrome.svg");
+  margin-right: 5px;
+}
+
+.address {
+  grid-area: address;
+  border: solid black 2px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 15px;
+}
+
+.address-label {
+  /* margin-left: ; */
+}
+.address-label::before {
+  content: url("../images//icons/geo-alt-fill.svg");
+  margin-right: 5px;
+}
+
+.address-content {
+  margin: 15px 0 20px 18px;
+}
+
+.address p {
+  margin: 0;
+}
+
+.address iframe {
+  width: 600px;
+  height: 450px;
+}
+/* .contact,
 .address {
   border: black solid 1px;
 }
@@ -176,4 +306,82 @@ footer p {
 .contact input,
 .contact textarea {
   display: block;
+} */
+
+/**General**/
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+@media screen and (min-width: 1201px) {
+  #carouselExampleIndicators {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  #carouselExampleIndicators {
+    width: 75%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .address iframe {
+    width: 400px;
+    height: 300px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  #carouselExampleIndicators {
+    width: 80%;
+  }
+  .quote img {
+    width: 300px;
+  }
+
+  #contact-main .container {
+    display: grid;
+    width: fit-content;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1.5fr;
+    grid-template-areas:
+      "contact-info"
+      "schedule"
+      "address";
+  }
+
+  .schedule {
+    margin-bottom: 50px;
+  }
+
+  .address iframe {
+    width: 280px;
+    height: 280px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  #carouselExampleIndicators {
+    width: 100%;
+  }
+}
+
+/*Special case for Galaxy Fold*/
+@media screen and (max-width: 300px) {
+  .navbar {
+    flex-wrap: wrap;
+  }
+
+  .quote img {
+    width: 200px;
+  }
+
+  .address iframe {
+    width: 200px;
+    height: 200px;
+  }
 }

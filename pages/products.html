@@ -14,30 +14,56 @@
       href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Expletus+Sans:ital,wght@0,400..700;1,400..700&family=Niramit:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="../css/style.css" />
     <title>Productos</title>
   </head>
   <body>
     <header>
-      <img
-        class="logo"
-        src="https://res.cloudinary.com/doxztm7ed/image/upload/v1697827625/Ferrek/LOGO_FERREK_without_background_wipsmf.png"
-        alt="Logo ferrek"
-      />
-      <nav>
-        <ul>
-          <li class="menu-item">
-            <a href="../index.html">Inicio</a>
-          </li>
-          <li class="menu-item">
-            <a href="./about.html">Sobre nosotros</a>
-          </li>
-          <li class="menu-item">
-            <a class="active" href="#">Productos</a>
-          </li>
-          <li class="menu-item"><a href="./brands.html">Marcas</a></li>
-          <li class="menu-item"><a href="./contact.html">Contacto</a></li>
-        </ul>
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <a href="../index.html"
+            ><img
+              class="logo"
+              src="https://res.cloudinary.com/doxztm7ed/image/upload/v1697827625/Ferrek/LOGO_FERREK_without_background_wipsmf.png"
+              alt="Logo ferrek"
+          /></a>
+        </div>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="menu-item nav-item">
+              <a href="../index.html">Inicio</a>
+            </li>
+            <li class="menu-item nav-item">
+              <a href="./about.html">Sobre nosotros</a>
+            </li>
+            <li class="menu-item nav-item">
+              <a class="active" href="#">Productos</a>
+            </li>
+            <li class="menu-item nav-item">
+              <a href="./brands.html">Marcas</a>
+            </li>
+            <li class="menu-item nav-item">
+              <a href="./contact.html">Contacto</a>
+            </li>
+          </ul>
+        </div>
       </nav>
     </header>
     <main>
@@ -45,71 +71,118 @@
         <h1>Productos</h1>
       </section>
       <section class="products">
-        <div class="product">
+        <div class="card text-center" style="width: 18rem">
           <img
             src="../images/productos/truper-tralado.jpg"
+            class="card-img-top"
             alt="Truper taladro"
           />
-          <p>Taladro Truper</p>
-          <button class="details">Detalles</button>
+          <div class="card-body">
+            <h5 class="card-title">Taladro Truper</h5>
+            <a href="#" class="btn details">Detalles</a>
+          </div>
         </div>
-        <div class="product">
-          <img src="../images//productos/clavos.jpg" alt="Clavos" />
-          <p>Clavos</p>
-          <button class="details">Detalles</button>
-        </div>
-        <div class="product">
+
+        <div class="card text-center" style="width: 18rem">
           <img
-            src="../images//productos/energizer-aa.jpg"
-            alt="Baterias Energizer AA"
+            src="../images/productos/clavos.jpg"
+            class="card-img-top"
+            alt="Clavos"
           />
-          <p>Baterias Energizer AA</p>
-          <button class="details">Detalles</button>
+          <div class="card-body">
+            <h5 class="card-title">Clavos</h5>
+            <a href="#" class="btn details">Detalles</a>
+          </div>
         </div>
-        <div class="product">
+
+        <div class="card text-center" style="width: 18rem">
           <img
-            src="../images//productos/pretul-herramientas.jpg"
-            alt="Pretul herramientas"
+            src="../images/productos/energizer-aa.jpg"
+            class="card-img-top"
+            alt="Baterias energizer AA"
           />
-          <p>Pretul Kit de Herramientas</p>
-          <button class="details">Detalles</button>
+          <div class="card-body">
+            <h5 class="card-title">Baterias Energizer AA</h5>
+            <a href="#" class="btn details">Detalles</a>
+          </div>
         </div>
-        <div class="product">
+
+        <div class="card text-center" style="width: 18rem">
           <img
-            src="../images//productos//tecnolite-lampara.jpg"
+            src="../images/productos/pretul-herramientas.jpg"
+            class="card-img-top"
+            alt="Pretul Kit de herramientas"
+          />
+          <div class="card-body">
+            <h5 class="card-title">Pretul Kit de Herramientas</h5>
+            <a href="#" class="btn details">Detalles</a>
+          </div>
+        </div>
+
+        <div class="card text-center" style="width: 18rem">
+          <img
+            src="../images/productos/tecnolite-lampara.jpg"
+            class="card-img-top"
             alt="Tecnolite lampara"
           />
-          <p>Tecnolite Lampara</p>
-          <button class="details">Detalles</button>
+          <div class="card-body">
+            <h5 class="card-title">Tecnolite Lampara</h5>
+            <a href="#" class="btn details">Detalles</a>
+          </div>
         </div>
-        <div class="product">
-          <img src="../images//productos//broca.jpg" alt="Broca concreto" />
-          <p>Broca concreto</p>
-          <button class="details">Detalles</button>
-        </div>
-        <div class="product">
-          <img src="../images//productos//brocha.jpg" alt="Brocha 1 1/2" />
-          <p>Brocha de 1 1/2</p>
-          <button class="details">Detalles</button>
-        </div>
-        <div class="product">
+
+        <div class="card text-center" style="width: 18rem">
           <img
-            src="../images//productos//destornillador.jpg"
+            src="../images/productos/broca.jpg"
+            class="card-img-top"
+            alt="Broca"
+          />
+          <div class="card-body">
+            <h5 class="card-title">Broca de concreto</h5>
+            <a href="#" class="btn details">Detalles</a>
+          </div>
+        </div>
+
+        <div class="card text-center" style="width: 18rem">
+          <img
+            src="../images/productos/brocha.jpg"
+            class="card-img-top"
+            alt="Brocha 1 1/2"
+          />
+          <div class="card-body">
+            <h5 class="card-title">Brocha de 1" 1/2</h5>
+            <a href="#" class="btn details">Detalles</a>
+          </div>
+        </div>
+
+        <div class="card text-center" style="width: 18rem">
+          <img
+            src="../images/productos/destornillador.jpg"
+            class="card-img-top"
             alt="Destornillador"
           />
-          <p>Destornillador</p>
-          <button class="details">Detalles</button>
+          <div class="card-body">
+            <h5 class="card-title">Destornillador</h5>
+            <a href="#" class="btn details">Detalles</a>
+          </div>
         </div>
       </section>
     </main>
     <footer>
       <p>© Ferrek</p>
-      <a href="https://www.facebook.com/FerrekRubi" target="_blank"
-        ><img
-          class="facebook"
-          src="../images/facebook-icon.png"
-          alt="facebook icon"
-      /></a>
+      <div class="div-facebook">
+        <a href="https://www.facebook.com/FerrekRubi" target="_blank"
+          ><img
+            class="facebook"
+            src="../images/facebook-icon.png"
+            alt="facebook icon"
+        /></a>
+      </div>
     </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
