@@ -1,0 +1,20 @@
+//var
+$blue: #1976d2;
+$light-gray: #d6dce5;
+$contacts: (
+  whatsapp: url("../images//icons/whatsapp.svg"),
+  phone: url("../images//icons/telephone-fill.svg"),
+  email: url("../images//icons/envelope-at-fill.svg"),
+  web: url("../images//icons/browser-chrome.svg"),
+);
+
+@mixin sizes($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

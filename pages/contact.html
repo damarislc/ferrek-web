@@ -21,7 +21,11 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="../css/style.css" />
-    <title>Contacto</title>
+    <title>Ferrek | Contacto y dirección de la empresa</title>
+    <meta
+      name="description"
+      content="Contacte con Ferretería Ferrek para cualquier consulta o pedido. Nuestro equipo está listo para ayudarle. Encuentre nuestra ubicación, horarios de atención y medios de contacto aquí. ¡Estamos para servirle!"
+    />
   </head>
   <body>
     <header>
@@ -81,19 +85,35 @@
             <p>Domingo de 9:30 a.m. a 2 p.m.</p>
           </div>
         </section>
-        <section class="contact-info">
-          <div class="contact whatsapp"><p>33 2231 3179</p></div>
-          <div class="contact phone"><p>33 3618 5612</p></div>
-          <div class="contact email"><p>contacto@ferrek.com</p></div>
-          <div class="contact web"><p>www.ferrek.com</p></div>
+        <section class="contact-info" itemscope>
+          <div class="contact whatsapp">
+            <p itemprop="cellphone">
+              <a href="https://wa.me/+523322313179" target="_blank"
+                >+52 33 2231 3179</a
+              >
+            </p>
+          </div>
+          <div class="contact phone">
+            <p itemprop="telephone">
+              <a href="tel:+523336185612">+52 33 3618 5612</a>
+            </p>
+          </div>
+          <div class="contact email">
+            <p itemprop="email">
+              <a href="mailto:contacto@ferrek.com">contacto@ferrek.com</a>
+            </p>
+          </div>
+          <div class="contact web">
+            <p itemprop="website"><a href="../index.html">www.ferrek.com</a></p>
+          </div>
         </section>
         <section class="address">
           <p class="address-label">Dirección:</p>
-          <div class="address-content">
-            <p>Rubi 961</p>
-            <p>Col. El Retiro</p>
-            <p>44270</p>
-            <p>Guadalajara, Jal., México</p>
+          <div class="address-content" itemscope>
+            <p itemprop="street">Rubi 961</p>
+            <p itemprop="neighborhood">Col. El Retiro</p>
+            <p itemprop="zip code">44270</p>
+            <p itemprop="city">Guadalajara, Jal., México</p>
           </div>
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3732.471798101258!2d-103.3391056240364!3d20.691057599290378!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428b1c013d326eb%3A0x40f370a43dd34bd8!2sFerrek!5e0!3m2!1ses!2sus!4v1710878865344!5m2!1ses!2sus"

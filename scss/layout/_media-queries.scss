@@ -1,0 +1,36 @@
+//queries
+@mixin xlarge {
+  @media screen and (min-width: 1201px) {
+    @content;
+  }
+}
+@mixin large {
+  @media screen and (max-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin medium {
+  @media screen and (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (max-width: 576px) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media screen and (max-width: 450px) {
+    @content;
+  }
+}
+
+/*Special case for Galaxy Fold*/
+@mixin fold {
+  @media screen and (max-width: 300px) {
+    @content;
+  }
+}

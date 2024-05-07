@@ -1,3 +1,4 @@
+/*Special case for Galaxy Fold*/
 * {
   margin: 0;
   padding: 0;
@@ -16,108 +17,56 @@ body {
 header {
   width: 100%;
   background-color: #d6dce5;
-  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
-    0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
 }
-
-img {
+header .navbar .container-fluid {
+  width: auto;
+  margin-left: unset;
+}
+header .navbar .container-fluid .logo {
   vertical-align: baseline;
-}
-
-main {
-  padding: 15px;
-  margin-bottom: 50px;
-  flex: 1;
-}
-
-nav a {
-  font-size: larger;
-  text-decoration: none;
-  color: #1976d2;
-}
-
-nav a:hover {
-  color: red;
-}
-
-footer {
-  background-color: #d6dce5;
-  box-shadow: 0px -2px 4px -1px rgba(0, 0, 0, 0.2),
-    0px -4px 5px 0px rgba(0, 0, 0, 0.14), 0px -1px 10px 0px rgba(0, 0, 0, 0.12);
-  height: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  margin-bottom: auto;
-}
-
-footer p {
-  font-weight: 700;
-  font-size: 18px;
-  margin-right: 20px;
-  margin-bottom: 0;
-}
-
-footer img {
-  vertical-align: baseline;
-}
-
-.facebook,
-.div-facebook {
-  width: 20px;
-  height: 20px;
-}
-
-nav .active {
-  border-bottom: 2px solid red;
-}
-
-.logo {
   margin-right: 8px;
   width: 231px;
   height: 94px;
 }
-
-.menu-item {
+header .navbar .navbar-toggler {
+  margin-left: auto;
+}
+header .navbar #navbarSupportedContent {
+  flex-grow: initial;
+  flex-basis: auto;
+}
+@media screen and (max-width: 576px) {
+  header .navbar #navbarSupportedContent {
+    margin-left: auto;
+  }
+}
+@media screen and (max-width: 576px) {
+  header .navbar #navbarSupportedContent .navbar-nav {
+    align-items: end;
+  }
+}
+header .navbar #navbarSupportedContent .navbar-nav .menu-item {
   display: inline-block;
   margin: 1em;
   font-weight: 700;
 }
-
-.header-main {
-  text-align: center;
+header .navbar #navbarSupportedContent .navbar-nav .menu-item .active {
+  border-bottom: 2px solid red;
+}
+header .navbar #navbarSupportedContent .navbar-nav .menu-item a {
+  font-size: larger;
+  text-decoration: none;
   color: #1976d2;
 }
-
-.header-main h1 {
-  font-size: 2em;
+header .navbar #navbarSupportedContent .navbar-nav .menu-item a:hover {
+  color: red;
 }
 
-.promotions {
-  margin-left: 20px;
-}
-
-.promotions img {
-  width: 500px;
-}
-
-.quote {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.quote img {
-  margin-bottom: 1rem;
-}
-
-.quote button,
-.details {
-  background: #1976d2;
+.blue-button, main .products .card .card-body .details, main .quote button {
   width: 88px;
   height: 45px;
+  background: #1976d2;
   padding: 8px;
   border-radius: 16px;
   color: white;
@@ -125,139 +74,185 @@ nav .active {
   font-size: large;
 }
 
-header .container-fluid {
-  width: auto;
-  margin-left: unset;
+main {
+  padding: 15px;
+  margin-bottom: 50px;
 }
-
-.navbar {
-  flex-wrap: nowrap;
+main .header-main {
+  text-align: center;
+  color: #1976d2;
 }
-
-.navbar-toggler {
-  margin-left: auto;
+main .promotions {
+  margin-left: 20px;
 }
-
-#navbarSupportedContent {
-  flex-grow: initial;
-  flex-basis: auto;
+@media screen and (min-width: 1201px) {
+  main .promotions #carouselExampleIndicators {
+    width: 50%;
+  }
 }
-
-.carousel-control-prev-icon {
+@media screen and (max-width: 1200px) {
+  main .promotions #carouselExampleIndicators {
+    width: 75%;
+  }
+}
+@media screen and (max-width: 576px) {
+  main .promotions #carouselExampleIndicators {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 450px) {
+  main .promotions #carouselExampleIndicators {
+    width: 100%;
+  }
+}
+main .promotions #carouselExampleIndicators .carousel-control-prev .carousel-control-prev-icon {
   background-image: url("../images//prevIcon.svg");
 }
-
-.carousel-control-next-icon {
+main .promotions #carouselExampleIndicators .carousel-control-next .carousel-control-next-icon {
   background-image: url("../images/nextIcon.svg");
 }
-
-/*** About ***/
-.main-about .p1 {
-  margin-bottom: 1em;
+main .quote {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
-
-/*** Products ***/
-.btn:hover {
-  background-color: #d6dce5;
+main .quote img {
+  margin-bottom: 1rem;
 }
-
-.products {
+@media screen and (max-width: 576px) {
+  main .quote img {
+    width: 300px;
+  }
+}
+@media screen and (max-width: 300px) {
+  main .quote img {
+    width: 200px;
+  }
+}
+main .about h2 {
+  text-align: center;
+  color: #1976d2;
+}
+main .about img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+main .products {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: center;
 }
-
-.products img {
+main .products .card {
+  margin: 1rem;
+  width: 18rem;
+}
+main .products .card img {
   height: 300px;
 }
-
-.products .card {
-  margin: 1rem;
+main .products .card .card-body .details:hover {
+  background-color: #d6dce5;
 }
-
-/*** Brands ***/
-.brands {
-  margin: 15px 50px 15px 50px;
+main .brands {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
-
-.brand {
+main .brands .brand {
   display: inline-block;
   margin: 15px;
 }
-.brand img {
-  width: 300px;
+main .brands .brand:hover {
+  transform: rotate(20deg);
 }
-
-/*** Contact ***/
-#contact-main .container {
+main .brands .brand img {
+  width: 300px;
+  vertical-align: baseline;
+}
+main .container {
   display: grid;
   width: fit-content;
   grid-auto-columns: 1fr;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 0.5fr 1.5fr;
   gap: 5px 10px;
-  grid-template-areas:
-    "schedule contact-info"
-    "address address";
+  grid-template-areas: "schedule contact-info" "address address";
 }
-
-.schedule {
+@media screen and (max-width: 576px) {
+  main .container {
+    display: grid;
+    width: fit-content;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1.5fr;
+    grid-template-areas: "contact-info" "schedule" "address";
+  }
+}
+main .container .schedule {
   grid-area: schedule;
   border: solid black 2px;
   display: flex;
   flex-direction: column;
-  /* height: 250px; */
   justify-content: center;
   padding-left: 15px;
 }
-
-.schedule-title p::before {
+@media screen and (max-width: 576px) {
+  main .container .schedule {
+    margin-bottom: 50px;
+  }
+}
+main .container .schedule .schedule-title p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+main .container .schedule .schedule-title p::before {
   content: url("../images//icons/clock.svg");
   margin-right: 5px;
 }
-
-.schedule-hours {
+main .container .schedule .schedule-hours {
   margin-top: 20px;
   margin-left: 18px;
 }
-.contact-info {
+main .container .contact-info {
   grid-area: contact-info;
   display: flex;
   flex-direction: column;
 }
-
-.contact {
+main .container .contact-info .contact {
   border: solid black 2px;
   margin: 5px;
   padding: 15px;
 }
-
-.contact p {
+main .container .contact-info .contact p {
   margin-bottom: 0;
 }
-
-.whatsapp p::before {
+main .container .contact-info .contact p a {
+  text-decoration: none;
+  color: #1976d2;
+}
+main .container .contact-info .contact p a:hover {
+  color: red;
+}
+main .container .contact-info .whatsapp p::before {
   content: url("../images//icons/whatsapp.svg");
   margin-right: 5px;
 }
-
-.phone p::before {
+main .container .contact-info .phone p::before {
   content: url("../images//icons/telephone-fill.svg");
   margin-right: 5px;
 }
-
-.email p::before {
+main .container .contact-info .email p::before {
   content: url("../images//icons/envelope-at-fill.svg");
   margin-right: 5px;
 }
-
-.web p::before {
+main .container .contact-info .web p::before {
   content: url("../images//icons/browser-chrome.svg");
   margin-right: 5px;
 }
-
-.address {
+main .container .address {
   grid-area: address;
   border: solid black 2px;
   display: flex;
@@ -265,123 +260,69 @@ header .container-fluid {
   justify-content: center;
   padding: 15px;
 }
-
-.address-label {
-  /* margin-left: ; */
+main .container .address .address-label {
+  margin: 0;
 }
-.address-label::before {
+main .container .address .address-label::before {
   content: url("../images//icons/geo-alt-fill.svg");
   margin-right: 5px;
 }
-
-.address-content {
+main .container .address .address-content {
   margin: 15px 0 20px 18px;
 }
-
-.address p {
+main .container .address .address-content p {
   margin: 0;
 }
-
-.address iframe {
+main .container .address iframe {
   width: 600px;
   height: 450px;
 }
-/* .contact,
-.address {
-  border: black solid 1px;
-}
-
-.contact {
-  width: 300px;
-  padding: 20px;
-  margin: 15px 0 20px 550px;
-}
-
-.address {
-  width: 650px;
-  padding: 20px;
-  margin: 15px 0 20px 350px;
-}
-.contact label,
-.contact input,
-.contact textarea {
-  display: block;
-} */
-
-/**General**/
-.center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-}
-
-@media screen and (min-width: 1201px) {
-  #carouselExampleIndicators {
-    width: 50%;
-  }
-}
-
-@media screen and (max-width: 1200px) {
-  #carouselExampleIndicators {
-    width: 75%;
-  }
-}
-
 @media screen and (max-width: 767px) {
-  .address iframe {
+  main .container .address iframe {
     width: 400px;
     height: 300px;
   }
 }
-
 @media screen and (max-width: 576px) {
-  #carouselExampleIndicators {
-    width: 80%;
-  }
-  .quote img {
-    width: 300px;
-  }
-
-  #contact-main .container {
-    display: grid;
-    width: fit-content;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1.5fr;
-    grid-template-areas:
-      "contact-info"
-      "schedule"
-      "address";
-  }
-
-  .schedule {
-    margin-bottom: 50px;
-  }
-
-  .address iframe {
+  main .container .address iframe {
     width: 280px;
     height: 280px;
   }
 }
-
-@media screen and (max-width: 450px) {
-  #carouselExampleIndicators {
-    width: 100%;
-  }
-}
-
-/*Special case for Galaxy Fold*/
 @media screen and (max-width: 300px) {
-  .navbar {
-    flex-wrap: wrap;
-  }
-
-  .quote img {
-    width: 200px;
-  }
-
-  .address iframe {
+  main .container .address iframe {
     width: 200px;
     height: 200px;
   }
 }
+
+footer {
+  background-color: #d6dce5;
+  box-shadow: 0px -2px 4px -1px rgba(0, 0, 0, 0.2), 0px -4px 5px 0px rgba(0, 0, 0, 0.14), 0px -1px 10px 0px rgba(0, 0, 0, 0.12);
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: auto;
+}
+footer p {
+  font-weight: 700;
+  font-size: 18px;
+  margin-right: 20px;
+  margin-bottom: 0;
+}
+footer .div-facebook {
+  width: 20px;
+  height: 20px;
+}
+footer .div-facebook a .facebook {
+  width: 20px;
+  height: 20px;
+  vertical-align: baseline;
+}
+footer .div-facebook a .facebook:hover {
+  transform: scale(2, 2);
+}
+
+/*# sourceMappingURL=style.css.map */

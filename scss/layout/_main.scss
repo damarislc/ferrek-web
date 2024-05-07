@@ -1,0 +1,221 @@
+//main
+.blue-button {
+  @include sizes(88px, 45px);
+  background: $blue;
+  padding: 8px;
+  border-radius: 16px;
+  color: white;
+  font-weight: 700;
+  font-size: large;
+}
+
+main {
+  padding: 15px;
+  margin-bottom: 50px;
+  .header-main {
+    text-align: center;
+    color: $blue;
+  }
+  .promotions {
+    margin-left: 20px;
+    #carouselExampleIndicators {
+      @include xlarge {
+        width: 50%;
+      }
+      @include large {
+        width: 75%;
+      }
+      @include tablet {
+        width: 80%;
+      }
+      @include mobile {
+        width: 100%;
+      }
+      .carousel-control-prev {
+        .carousel-control-prev-icon {
+          background-image: url("../images//prevIcon.svg");
+        }
+      }
+      .carousel-control-next {
+        .carousel-control-next-icon {
+          background-image: url("../images/nextIcon.svg");
+        }
+      }
+    }
+  }
+  .quote {
+    @include flex-center;
+    flex-direction: column;
+    img {
+      margin-bottom: 1rem;
+      @include tablet {
+        width: 300px;
+      }
+      @include fold {
+        width: 200px;
+      }
+    }
+    button {
+      @extend .blue-button;
+    }
+  }
+  //about
+  .about {
+    h2 {
+      text-align: center;
+      color: $blue;
+    }
+    img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 50%;
+    }
+  }
+  //products
+  .products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    .card {
+      margin: 1rem;
+      width: 18rem;
+      img {
+        height: 300px;
+      }
+      .card-body {
+        .details {
+          @extend .blue-button;
+          &:hover {
+            background-color: $light-gray;
+          }
+        }
+      }
+    }
+  }
+  //brands
+  .brands {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    .brand {
+      display: inline-block;
+      margin: 15px;
+      &:hover {
+        transform: rotate(20deg);
+      }
+      img {
+        width: 300px;
+        vertical-align: baseline;
+      }
+    }
+  }
+  //contact
+  .container {
+    display: grid;
+    width: fit-content;
+    grid-auto-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 0.5fr 1.5fr;
+    gap: 5px 10px;
+    grid-template-areas:
+      "schedule contact-info"
+      "address address";
+    @include tablet {
+      display: grid;
+      width: fit-content;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr 1.5fr;
+      grid-template-areas:
+        "contact-info"
+        "schedule"
+        "address";
+    }
+    .schedule {
+      grid-area: schedule;
+      border: solid black 2px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-left: 15px;
+      @include tablet {
+        margin-bottom: 50px;
+      }
+      .schedule-title {
+        p {
+          margin-top: 0;
+          margin-bottom: 1rem;
+          &::before {
+            content: url("../images//icons/clock.svg");
+            margin-right: 5px;
+          }
+        }
+      }
+      .schedule-hours {
+        margin-top: 20px;
+        margin-left: 18px;
+      }
+    }
+    .contact-info {
+      grid-area: contact-info;
+      display: flex;
+      flex-direction: column;
+      .contact {
+        border: solid black 2px;
+        margin: 5px;
+        padding: 15px;
+        p {
+          margin-bottom: 0;
+          a {
+            text-decoration: none;
+            color: $blue;
+            &:hover {
+              color: red;
+            }
+          }
+        }
+      }
+      @each $contact, $url in $contacts {
+        .#{$contact} p::before {
+          content: $url;
+          margin-right: 5px;
+        }
+      }
+    }
+    .address {
+      grid-area: address;
+      border: solid black 2px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 15px;
+      .address-label {
+        margin: 0;
+        &::before {
+          content: url("../images//icons/geo-alt-fill.svg");
+          margin-right: 5px;
+        }
+      }
+      .address-content {
+        margin: 15px 0 20px 18px;
+        p {
+          margin: 0;
+        }
+      }
+      iframe {
+        @include sizes(600px, 450px);
+        @include medium {
+          @include sizes(400px, 300px);
+        }
+        @include tablet {
+          @include sizes(280px, 280px);
+        }
+        @include fold {
+          @include sizes(200px, 200px);
+        }
+      }
+    }
+  }
+}
