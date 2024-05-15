@@ -14,6 +14,10 @@ body {
   flex-direction: column;
 }
 
+.swal2-popup {
+  font-family: "Niramit", sans-serif;
+}
+
 header {
   width: 100%;
   background-color: #d6dce5;
@@ -63,7 +67,7 @@ header .navbar #navbarSupportedContent .navbar-nav .menu-item a:hover {
   color: red;
 }
 
-.blue-button, main .products .card .card-body .details, main .quote button {
+.blue-button, main .section-form form button, main .products .card .card-body .details, main .quote button {
   width: 88px;
   height: 45px;
   background: #1976d2;
@@ -81,6 +85,20 @@ main {
 main .header-main {
   text-align: center;
   color: #1976d2;
+}
+main .header-main .agent {
+  width: 300px;
+  margin-bottom: 15px;
+}
+@media screen and (max-width: 576px) {
+  main .header-main .agent {
+    width: 200px;
+  }
+}
+@media screen and (max-width: 300px) {
+  main .header-main .agent {
+    width: 100px;
+  }
 }
 main .promotions {
   margin-left: 20px;
@@ -130,6 +148,12 @@ main .quote img {
     width: 200px;
   }
 }
+main .quote button {
+  border: none;
+}
+main .quote button:hover {
+  background-color: #d6dce5;
+}
 main .about h2 {
   text-align: center;
   color: #1976d2;
@@ -172,6 +196,32 @@ main .brands .brand:hover {
 main .brands .brand img {
   width: 300px;
   vertical-align: baseline;
+}
+main .quote-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+main .quote-info ul {
+  margin-left: -50px;
+}
+main .section-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .section-form form .form-group .form-control {
+  display: inline-block;
+}
+main .section-form form .form-group textarea {
+  height: 150px;
+}
+main .section-form form button {
+  float: right;
+}
+main .section-form form button:hover {
+  background-color: #d6dce5;
 }
 main .container {
   display: grid;

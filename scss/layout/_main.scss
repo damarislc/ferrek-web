@@ -15,6 +15,16 @@ main {
   .header-main {
     text-align: center;
     color: $blue;
+    .agent {
+      width: 300px;
+      margin-bottom: 15px;
+      @include tablet {
+        width: 200px;
+      }
+      @include fold {
+        width: 100px;
+      }
+    }
   }
   .promotions {
     margin-left: 20px;
@@ -57,6 +67,10 @@ main {
     }
     button {
       @extend .blue-button;
+      border: none;
+      &:hover {
+        background-color: $light-gray;
+      }
     }
   }
   //about
@@ -109,6 +123,34 @@ main {
       img {
         width: 300px;
         vertical-align: baseline;
+      }
+    }
+  }
+  //quote
+  .quote-info {
+    @include flex-center;
+    flex-direction: column;
+    ul {
+      margin-left: -50px;
+    }
+  }
+  .section-form {
+    @include flex-center;
+    form {
+      .form-group {
+        .form-control {
+          display: inline-block;
+        }
+        textarea {
+          height: 150px;
+        }
+      }
+      button {
+        @extend .blue-button;
+        float: right;
+        &:hover {
+          background-color: $light-gray;
+        }
       }
     }
   }

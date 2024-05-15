@@ -21,10 +21,11 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="../css/style.css" />
-    <title>Ferrek | Marcas que manejamos</title>
+    <script src="../js/quote.js" defer></script>
+    <title>Ferrek | Cotiza</title>
     <meta
       name="description"
-      content="Conozca las marcas líderes que manejamos en Ferretería Ferrek. Ofrecemos productos de calidad de marcas confiables para sus proyectos de construcción, reparación y mejoras en el hogar. ¡Descubra nuestra selección!"
+      content="Contacte con Ferretería Ferrek para cotizar un producto."
     />
   </head>
   <body>
@@ -61,10 +62,10 @@
               <a href="./products.html">Productos</a>
             </li>
             <li class="menu-item nav-item">
-              <a class="active" href="#">Marcas</a>
+              <a href="./brands.html">Marcas</a>
             </li>
             <li class="menu-item nav-item">
-              <a href="./quote.html">Cotiza</a>
+              <a class="active" href="#">Cotiza</a>
             </li>
             <li class="menu-item nav-item">
               <a href="./contact.html">Contacto</a>
@@ -73,65 +74,68 @@
         </div>
       </nav>
     </header>
-    <main>
+    <main id="quote-main">
       <section class="header-main">
-        <h1>Marcas que manejamos</h1>
+        <h1>Cotiza</h1>
+        <img
+          class="agent"
+          src="../images/call-agent.png"
+          alt="Imagen agente cotización"
+        />
       </section>
-      <section class="brands">
-        <div class="brand">
-          <img src="../images//brands/truper.png" alt="Logo marca Truper" />
-        </div>
-        <div class="brand">
-          <img src="../images//brands/pretul.png" alt="Logo marca Pretul" />
-        </div>
-        <div class="brand">
-          <img
-            src="../images//brands/tecnolite.png"
-            alt="Logo marca Tecnolite"
-          />
-        </div>
-        <div class="brand">
-          <img
-            src="../images//brands/energizer.png"
-            alt="Logo marca Energizer"
-          />
-        </div>
-        <div class="brand">
-          <img src="../images//brands/urrea.png" alt="Logo marca Urrea" />
-        </div>
-        <div class="brand">
-          <img src="../images//brands/perfect.jpg" alt="Logo marca Perfect" />
-        </div>
-        <div class="brand">
-          <img src="../images//brands/bosch.jpg" alt="Logo marca Bosch" />
-        </div>
-        <div class="brand">
-          <img
-            src="../images//brands/3-in-one-vector-logo.png"
-            alt="Logo marca 3 en 1"
-          />
-        </div>
-        <div class="brand">
-          <img src="../images//brands/stanley.svg" alt="Logo marca Stanley" />
-        </div>
-        <div class="brand">
-          <img src="../images//brands/surtek.jpg" alt="Logo marca Surtek" />
-        </div>
-        <div class="brand">
-          <img src="../images//brands/fiero.png" alt="Logo marca Fiero" />
-        </div>
-        <div class="brand">
-          <img src="../images//brands/hermex.png" alt="Logo marca Hermex" />
-        </div>
-        <div class="brand">
-          <img src="../images//brands/philips.png" alt="Logo marca Philips" />
-        </div>
-        <div class="brand">
-          <img src="../images//brands/yale.png" alt="Logo marca Yale" />
-        </div>
-        <div class="brand">
-          <img src="../images//brands/joper.png" alt="Logo marca Joper" />
-        </div>
+      <section class="quote-info">
+        <p>
+          Para nosotros es un placer atenderle, por favor envíenos sus preguntas
+          o productos a cotizar.
+        </p>
+        <p>Favor de indicar:</p>
+        <ul>
+          <li>Marca</li>
+          <li>Producto</li>
+          <li>Cantidad</li>
+        </ul>
+        <p>
+          Nuestro equipo de atención al cliente lo contactará con la cotización
+          correspondiente en la mayor brevedad posible.
+        </p>
+        <p>
+          Si requiere de una asistencia más rápida, favor de llamar al
+          <a href="tel:+523336185612">+52 33 3618 5612</a>
+        </p>
+      </section>
+      <section class="section-form">
+        <form id="form-quote">
+          <div class="form-group">
+            <label for="name">Nombre</label>
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              placeholder="Mi nombre"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              placeholder="email@mail.com"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="message">Mensaje</label>
+            <textarea
+              class="form-control"
+              id="message"
+              rows="3"
+              required
+            ></textarea>
+          </div>
+          <button class="btn send" id="btn-send">Enviar</button>
+        </form>
       </section>
     </main>
     <footer>
@@ -150,5 +154,6 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </body>
 </html>
